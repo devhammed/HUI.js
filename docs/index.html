@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HUI.js - Simple and Lightweight JavaScript UI Layout Library</title>
+  <meta name="description" content="HUI.js - A Simple and Lightweight JavaScript UI Layout Library for creating re-usable Webpage Layouts."
+  />
+  <link rel="stylesheet" href="/h.css" />
+</head>
+
+<body>
+  <header class="h-container h-carrot">
+    <h1>HUI.js - Simple and Lightweight JavaScript UI Layout Library</h1>
+  </header>
+  <main class="h-container h-light-grey">
+    <div>
+      <a href="HUI.js" class="h-dark-grey h-btn">Download v1.0</a>
+      <a href="http://github.com/Horlahcoded/HUI.js" class="h-btn h-dark-grey">Fork on GitHub</a>
+    </div>
+    <section>
+      <h2>#. Introduction to HUI.js</h2>
+      <p>
+        HUI.js is a Simple and Lightweight JavaScript UI Layout Library for creating easy and re-usable Webpage Layouts. You can
+        download it locally
+        <a href="HUI.js">HERE</a> or link to it using SCRIPT tag:-
+        <div class="h-info">
+          &lt;script src="http://www.oyedelehammed.ml/HUI.js"&gt;&lt;/script&gt;
+        </div>
+      </p>
+    </section>
+    <section>
+      <div>
+        HUI.js has a HTMLElement creator function "hui()" and a function to render the created HTMLElement on a view:-
+        <p>
+          <i>hui( tag, attributes, ...childrens )</i>: This function is used to create elements and returns a HTMLElement Node
+          that can be rendered or append to a parent Node. The first two arguments is the HTML 'tag' element (required, type:
+          String) and the 'attributes' (optional, type: Object), the rest arguments will be the element 'childrens' (optional,
+          type: HTMLElement | String).
+        </p>
+        <p>
+          <i>huiRender( node, view )</i>: This function is used to render the HTMLElement Node returned by
+          <i>hui()</i> on a 'view' element. The 'view' argument should be a String that contains the element to select in a
+          CSS-like style e.g to select a view with ID 'view', it would be "#view".
+        </p>
+      </div>
+      <p>Example: </p>
+      <div id="code" class="h-info">
+        <h3 class="h-red">index.html</h3>
+        &lt;DOCTYPE html&gt;
+        <br> &lt;html&gt;
+        <br> &nbsp;&nbsp;&lt;head&gt;
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;My HUI.js App&lt;/title&gt;
+        <br> &nbsp;&nbsp;&lt;/head&gt;
+        <br> &nbsp;&nbsp;&lt;body&gt;
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="view"&gt;&lt;/div&gt;
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="js/HUI.js"&gt;&lt;/script&gt;
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="js/app.js"&gt;&lt;/script&gt;
+        <br> &nbsp;&nbsp;&lt;/body&gt;
+        <br> &lt;/html&gt;
+        <br>
+        <h3 class="h-red">js/app.js</h3>
+        var app = hui('div', { id: 'container' },
+        <br> &nbsp;&nbsp;hui('header', { id: 'header' }, "Header"),
+        <br> &nbsp;&nbsp;hui('main', { id: 'main' },
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;hui('h1', {}, "Hello world"),
+        <br> &nbsp;&nbsp;&nbsp;&nbsp;hui('p', {}, "Hello world from HUI.js")
+        <br> &nbsp;&nbsp;),
+        <br> &nbsp;&nbsp;hui('footer', { id: 'footer' }, "Footer")
+        <br> );
+        <br> huiRender(app, '#view');
+        <br>
+      </div>
+      <p>Result:</p>
+      <div id="view"></div>
+    </section>
+  </main>
+  <p class="h-info">Check out my other projects
+    <a href="/">HERE</a>.</p>
+  <footer class="h-container h-carrot">
+    <h3>Copyright 2017 - Present | Oyedele Hammed Horlah</h3>
+  </footer>
+  <script src="HUI.js"></script>
+  <script>
+    var app = hui('div', { id: 'container' },
+      hui('header', { id: 'header' }, "Header"),
+      hui('main', { id: 'main' },
+        hui('h1', {}, "Hello world"),
+        hui('p', {}, "Hello world from HUI.js")
+      ),
+      hui('footer', { id: 'footer' }, "Footer")
+    );
+    huiRender(app, '#view');
+  </script>
+</body>
+
+</html>
