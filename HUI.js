@@ -2,7 +2,7 @@
   * @author Oyedele Hammed Horlah
   * @version 2.0
   * @since January 1, 2017
-  * @see http://www.oyedelehammed.ml/HUI.html
+  * @see http://www.oyedelehammed.ml/HUI.js
 */
 
 function hui( tag, attrs ) {
@@ -10,7 +10,8 @@ function hui( tag, attrs ) {
     d = document;
   var node = d.createElement( tag );
   if ( attrs ) {
-    for ( var attr in attrs ) node.setAttribute( attr, attrs[attr] );
+    for ( var attr in attrs )
+      node[ attr ] = attrs[attr];
   }
   if ( children ) {
     children.forEach(function( child ) {
